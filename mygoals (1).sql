@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 26, 2021 at 03:20 PM
+-- Generation Time: Jun 26, 2021 at 04:09 PM
 -- Server version: 8.0.21
 -- PHP Version: 7.4.12
 
@@ -29,10 +29,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `credentials` (
   `id` int NOT NULL,
-  `email` varchar(30) NOT NULL,
+  `email` varchar(30) COLLATE utf8mb4_general_ci NOT NULL,
   `username` int NOT NULL,
   `password` int NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -43,12 +43,12 @@ CREATE TABLE `credentials` (
 CREATE TABLE `goals` (
   `gid` int NOT NULL,
   `uid` int NOT NULL,
-  `title` varchar(100) NOT NULL,
-  `description` varchar(1000) NOT NULL,
+  `title` varchar(100) COLLATE utf8mb4_general_ci NOT NULL,
+  `description` varchar(1000) COLLATE utf8mb4_general_ci NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `completed` tinyint(1) NOT NULL DEFAULT '0',
   `alert_date` date NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -58,12 +58,12 @@ CREATE TABLE `goals` (
 
 CREATE TABLE `user_info` (
   `uid` int NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `linkedin` varchar(200) NOT NULL,
-  `github` varchar(200) NOT NULL,
-  `codechef` varchar(200) NOT NULL,
-  `profile_pic` varchar(400) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `name` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
+  `linkedin` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `github` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `codechef` varchar(200) COLLATE utf8mb4_general_ci NOT NULL,
+  `profile_pic` varchar(400) COLLATE utf8mb4_general_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Indexes for dumped tables
