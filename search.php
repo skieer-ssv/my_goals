@@ -1,19 +1,21 @@
 <?php
 
-require 'include/dbConfig.php';
+require 'include/dbConfig.inc.php';
 
 if(isset($_POST['search-btn']))
 {
-    $username = mysqli_real_escape_string($connection,$_POST['username']);
-    $email_id = mysqli_real_escape_string($connection,$_POST['email_id']);
+    $username = mysqli_real_escape_string($con,$_POST['username']);
+    $email_id = mysqli_real_escape_string($con,$_POST['email_id']);
   
     
   
-    $sql =  "SELECT `username`,`email` FROM credentials WHERE `username`='".$username."'and `email`='".$email_id."'limit 1";                                    
+    $sql =  "SELECT `username`,`email`, `id`  FROM credentials WHERE `username`='".$username."'and `email`='".$email_id."'limit 1";                                    
                   
-    $result = mysqli_query($connection,$sql);
+    $result = mysqli_query($con,$sql);
     
-    // echo $result;
+    $row= mysqli_fetch_assoc($result);
+
+    $id = $row["id"];
 
     if($result)
     {
@@ -28,7 +30,6 @@ if(isset($_POST['search-btn']))
       <th scope='col'>Details</th>
     </tr>
   </thead>
-  </table> 
         ";
 
 
@@ -42,7 +43,9 @@ if(isset($_POST['search-btn']))
     
     echo "<td>".$email_id."</td>";
     
-    echo "<td><a href='#'><button type='button' class='btn btn-dark'>Dark</button></a></td>";
+    echo "<td><a href='./user_profile.php?uid=";
+    
+    echo $id." '><button type='button' class='btn btn-dark'>Dark</button></a></td>";
 
     echo "
     
