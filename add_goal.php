@@ -20,13 +20,13 @@ if (!isset($_SESSION['uid'])) {
 
 <body>
   <!-- NAVBAR-->
-  <center><h1>'.$_SESSION['username'].'</h1></center>';
-
+  <center><h1>'.$_SESSION['user'].'</h1></center>';
+include_once 'nav.php';
   echo '
   <!-- DIVIDER -->
   
 <div style="min-height:70%">
-<div class="container">
+<div class="container" style="margin-top:100px;">
 <form action="dash.php" >
 <button class="btn" style="float:right; margin:15px;">Back</button>
 </form>

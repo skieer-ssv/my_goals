@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
    try{
     add_goal($con,$qy,"sssi",$title,$desc,$alert,$uid);
    
-      echo '<script>alert("Successfully updated");document.location="../site-admin/add-news.php"</script>';
+      echo '<script>alert("Successfully updated");document.location="../dash.php"</script>';
    }
    catch (PDOException $e) {
     echo $e->getMessage();
@@ -23,5 +23,5 @@ if (isset($_POST['submit'])) {
   
   
 } else {
-  header("location: ../site-admin/add-news.php");
+  header("location: ../dash.php");
 }

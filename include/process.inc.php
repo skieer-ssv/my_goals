@@ -11,7 +11,9 @@ session_start();
 
        else
        {
-            $query="select * from credentials where username='".$_POST['UName']."' and password='".$_POST['Password']."'";
+        $username=strip_tags($_POST['UName']);
+        $pass=strip_tags($_POST['Pasword']);
+            $query="select * from credentials where username='".$username."' and password='".$pass."'";
             $result=mysqli_query($con,$query);
 
             if(mysqli_fetch_assoc($result))
@@ -19,7 +21,7 @@ session_start();
             	session_start();
             	
             	$record=mysqli_fetch_array($result);
-                $_SESSION['User']=$_POST['UName'];
+                $_SESSION['user']=$record['username'];
                 $_SESSION['uid']=$record['uid'];
                 
                 header("location:../dash.php");

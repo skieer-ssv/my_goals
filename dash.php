@@ -1,6 +1,6 @@
 <?php
 session_start();
-$_SESSION['uid']=1;
+
 if (!isset($_SESSION['uid'])) {
 
   echo '<script>alert("You are not logged in");document.location="admin-login.php"</script>';
@@ -16,7 +16,7 @@ if (!isset($_SESSION['uid'])) {
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 <link href="css/style.css"  rel= "stylesheet">
   <title>myGoals | Profile</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet"> 
+ 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   
   </head>
