@@ -214,7 +214,7 @@ else
 
 
 
-?>
+
         <!-- Search form -->
         <form name="searchform" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <div class="row">

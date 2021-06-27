@@ -23,8 +23,11 @@ if (!isset($_SESSION['uid'])) {
   </head>
 
 <body>
-  <!-- NAVBAR-->
-  <center><h1>'.$_SESSION['user'].'</h1></center>';
+  <!-- NAVBAR-->';
+  include_once 'nav.php';
+  echo'
+  <center><h1 style="margin-top:70px">'.$_SESSION['user'].'</h1></center>';
+  
   echo '
   <!-- DIVIDER -->
 
