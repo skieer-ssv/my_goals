@@ -1,4 +1,7 @@
 <!DOCTYPE html>
+<?php
+session_start();
+?>
 <html>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
@@ -14,15 +17,23 @@
 		  <h2>Goals Site</h2>
          </div>
       <form class="form-inline my-2 my-lg-0">
-         
+         <?php 
+		  if (isset($_SESSION['User'])) {?>
 		  <div class="nav-item active">
             <a class="nav-link text-dark" href="dash.php">Dashboard <span class="sr-only">(current)</span></a>
          </div>
-		  
+		  <?php }
+		 
+			?>
 		  <div class="nav-item">
             <a class="nav-link text-dark" href="search.php">Search</a>
          </div >
-		 <a class="nav-link text-dark" href="include/logout.inc.php">Logout</a>
+		  <?php
+		  if (isset($_SESSION['User'])) {?><a class="nav-link text-dark" href="include/logout.inc.php">Logout</a>
+			  
+		 <?php }
+		 
+			?>
       </form>
    </div>
 </nav>
