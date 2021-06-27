@@ -1,13 +1,14 @@
 <?php session_start();
-require_once 'nav.php';?>
+?>
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Login Page</title>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
+	
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="css/login-style.css">
-   
+	<img src="images/logo.png" alt="Logo" style="width:200px;height:50px;"> <hr>
 	
 </head>
 <body>
