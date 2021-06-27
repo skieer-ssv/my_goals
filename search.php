@@ -45,6 +45,7 @@ require 'include/dbConfig.inc.php';
 
 <?php
 
+
 if(isset($_POST['search-name']))
 {
     $searchName = mysqli_real_escape_string($con,$_POST['search-name']);
@@ -54,13 +55,20 @@ if(isset($_POST['search-name']))
                   
     $result = mysqli_query($con,$sql);
     
-    $row= mysqli_fetch_array($result);
+    
 
-    $id = $row["uid"];
-
-    if($result)
+    if(mysqli_num_rows($result)==0)
     {
-
+        echo "<script>
+        
+            window.location.href='./search.php';
+        </script>
+        ";
+    }
+    elseif($result)
+    {
+        $row= mysqli_fetch_array($result);
+        $id = $row["uid"];
     ?>
         
        <div class="col-10 offset-1">
@@ -125,12 +133,22 @@ elseif(isset($_POST['search-btn']))
                   
     $result = mysqli_query($con,$sql);
     
+
+    if(mysqli_num_rows($result)==0)
+    {
+        echo "<script>
+        
+            window.location.href='./search.php';
+        </script>
+        ";
+    }
+    elseif($result)
+    {
+
+        
     $row= mysqli_fetch_array($result);
 
     $id = $row["uid"];
-
-    if($result)
-    {
 
     ?>
         
@@ -202,7 +220,7 @@ else
             <div class="row">
                 
                 <div class="col-10 offset-1 offset-md-4 col-md-3 md-form mt-4">
-                    <input class="form-control" name="username" type="text" placeholder="Search by student id" aria-label="Search">
+                    <input class="form-control" name="username" type="text" placeholder="Search by username" aria-label="Search">
                 </div>
                 
             </div>
