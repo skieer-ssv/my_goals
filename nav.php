@@ -23,7 +23,7 @@
          </div>
       <form class="form-inline my-2 my-lg-0">
          <?php 
-		  if (isset($_SESSION['User'])) {?>
+		  if (isset($_SESSION['user'])) {?>
 		  <div class="nav-item active">
             <a class="nav-link text-dark" href="dash.php">Dashboard <span class="sr-only">(current)</span></a>
          </div>
@@ -34,7 +34,7 @@
             <a class="nav-link text-dark" href="search.php">Search</a>
          </div >
 		  <?php
-		  if (isset($_SESSION['User'])) {?><a class="nav-link text-dark" href="include/logout.inc.php">Logout</a>
+		  if (isset($_SESSION['user'])) {?><a class="nav-link text-dark" href="include/logout.inc.php">Logout</a>
 			  
 		 <?php }
 		 

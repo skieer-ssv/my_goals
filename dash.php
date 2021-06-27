@@ -23,12 +23,16 @@ if (!isset($_SESSION['uid'])) {
 
 <body>
   <!-- NAVBAR-->
+  ';
+  include_once 'nav.php';
+  echo'
   <center><h1>'.$_SESSION['user'].'</h1></center>';
+  
   echo '
   <!-- DIVIDER -->
   
 <div style="min-height:70%">
-<div class="container">';
+<div class="container" style="margin-top:50px">';
 
   
   // Check connection

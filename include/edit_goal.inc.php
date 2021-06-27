@@ -20,7 +20,7 @@ else if($_POST['delete']!=null){
         echo '<script>alert("Successfully updated");document.location="../dash.php"</script>';
       }
       else{
-          // echo  '<script>alert("update failed");document.location="../dash.php"</script>';
+          echo  '<script>alert("update failed");document.location="../dash.php"</script>';
       }
     }
     else{

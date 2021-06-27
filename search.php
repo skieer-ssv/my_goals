@@ -45,7 +45,7 @@ require 'include/dbConfig.inc.php';
 
 <?php
 
-
+session_start();
 if(isset($_POST['search-name']))
 {
     $searchName = mysqli_real_escape_string($con,$_POST['search-name']);

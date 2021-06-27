@@ -1,6 +1,6 @@
 <?php
 
-
+session_start();
 require 'include/dbConfig.inc.php';
 
 
@@ -179,7 +179,7 @@ if($result)
 while($row=mysqli_fetch_assoc($result))
 {
     $title=$row['title'];
-    $alert_date=$row['alert_date'];
+    $alert_date=date("d-m-y",$row['alert_date']);
     $completed=$row['completed'];
 ?>
 
@@ -248,7 +248,7 @@ if($result)
 while($row=mysqli_fetch_assoc($result))
 {
     $title=$row['title'];
-    $alert_date=$row['alert_date'];
+    $alert_date=date("d-m-y",$row['alert_date']);
     $completed=$row['completed'];
 ?>
 
