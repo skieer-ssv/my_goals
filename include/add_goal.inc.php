@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
    try{
     add_goal($con,$qy,"ssii",$title,$desc,$alert,$uid);
    
-      echo '<script>alert("Successfully updated")';
+      echo '<script>alert("Successfully updated";document.location="../dash.php)';
    }
    catch (PDOException $e) {
     echo $e->getMessage();

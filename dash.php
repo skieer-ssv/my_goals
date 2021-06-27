@@ -71,8 +71,8 @@ if (!isset($_SESSION['uid'])) {
                     <h5 class="card-title"><a href="view_goal.php?g=' . $record["gid"] . '">' . $record["title"] . '</a></h5> 
                   </div>
                   <div class="row" style="display:flex; justify-content:space-evenly">
-                  <form action="../include/edit-goal.inc.php" method="POST"><button class="btn btn-success" name="done" value="' . $record["gid"] . '">Done</button></form>
-                  <form action="../include/edit-news.inc.php" method="POST"><button class=" btn btn-outline-dark" name="give_up" value="' . $record["gid"] . '">Give up</button></form>
+                  <form action="include/edit_goal.inc.php" method="POST"><button class="btn btn-success" name="done" value="' . $record["gid"] . '">Done</button></form>
+                  <form action="include/edit_goal.inc.php" method="POST"><button class=" btn btn-outline-dark" name="delete" value="' . $record["gid"] . '">Give up</button></form>
               </div></div>';
       }
     }

@@ -55,7 +55,7 @@ include_once 'nav.php';
       </div>
 <center>
       <div class="col-md-6 ">
-               <input type="submit" class="btn" value="submit" name="submit">
+               <input type="submit" class="btn btn-outline-dark" value="submit" name="submit">
             </div>
 </center>
       </form>
