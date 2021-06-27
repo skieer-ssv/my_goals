@@ -1,4 +1,5 @@
-<?php session_start(); ?>
+<?php session_start();
+require_once 'nav.php';?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,8 +11,6 @@
 	
 </head>
 <body>
-					
-	<img src="images/DM.png" alt="Logo" style="width:200px;height:50px;"> <hr>
 	
 	<div class="search-box" id="btn2" >  
 		<form action="search.php" method="post">
@@ -42,6 +41,7 @@
 		<a href="#" class="forgot">Forgot password?</a> 
 		<a class="con" href="#" class="forgot" id="signup">No account yet? Sign up</a>
 		<?php 
+		
                         if(@$_GET['Empty']==true)
                         {
                     ?>
