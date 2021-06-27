@@ -5,29 +5,24 @@
 <head>
 	<!-- The fixed navbar will overlay your other content, unless you add padding to the bottom of the <body>. Tip: By default, the navbar is 50px high.  -->
 <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
-   <a class="navbar-brand text-danger" href="include/logout.inc.php">Logout</a>
+   
    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
    <span class="navbar-toggler-icon"></span>
    </button>
    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-         <li class="nav-item active">
-            <a class="nav-link" href="dash.php">Home <span class="sr-only">(current)</span></a>
-         </li>
-         <li class="nav-item">
-            <a class="nav-link" href="add_goal.php">Add Goals</a>
-         </li>
-         <li class="nav-item">
-            <a class="nav-link" href="user_profile.php">User Profile</a>
-         </li>
-		  <li class="nav-item">
-            <a class="nav-link" href=view_goal.php">View Goals</a>
-         </li>
-         
-      </ul>
+      <div class="navbar-nav mr-auto">
+		  <h2>Goals Site</h2>
+         </div>
       <form class="form-inline my-2 my-lg-0">
-         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+         
+		  <div class="nav-item active">
+            <a class="nav-link text-dark" href="dash.php">Dashboard <span class="sr-only">(current)</span></a>
+         </div>
+		  
+		  <div class="nav-item">
+            <a class="nav-link text-dark" href="search.php">Search</a>
+         </div >
+		 <a class="nav-link text-dark" href="include/logout.inc.php">Logout</a>
       </form>
    </div>
 </nav>
