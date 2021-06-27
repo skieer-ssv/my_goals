@@ -23,7 +23,7 @@ if (!isset($_SESSION['uid'])) {
 
 <body>
   <!-- NAVBAR-->
-  <center><h1>'.$_SESSION['username'].'</h1></center>';
+  <center><h1>'.$_SESSION['user'].'</h1></center>';
   echo '
   <!-- DIVIDER -->
   

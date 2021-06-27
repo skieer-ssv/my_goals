@@ -2,20 +2,20 @@
 if (isset($_POST['submit'])) {
 // TODO: add prepare statement 
   session_start();
-  $title = strip_tags($_POST['NewsTitle']);
+  $title = strip_tags($_POST['GoalTitle']);
   
-  $desc = $_POST['newsDescription'] ? strip_tags($_POST['newsDescription']) : NULL;
-  $alert = $_POST['alertDate'] ? strtotime(strip_tags($_POST['alertDate'])) : NULL;
+  $desc = $_POST['GoalDescription'] ? strip_tags($_POST['GoalDescription']) : NULL;
+  $alert = $_POST['alert'] ? strtotime(strip_tags($_POST['alert'])) : NULL;
   
   $uid= $_SESSION['uid'];
   require_once 'dbquery.inc.php';
   require_once 'dbConfig.inc.php';
-  $qy = "INSERT INTO `goals`(`goal`,`description`,`alert_date`,`uid`) VALUES( ?,?,?,?)";
+  $qy = "INSERT INTO `goals`(`title`,`description`,`alert_date`,`uid`) VALUES( ?,?,?,?)";
 
    try{
-    add_goal($con,$qy,"sssi",$title,$desc,$alert,$uid);
+    add_goal($con,$qy,"ssii",$title,$desc,$alert,$uid);
    
-      echo '<script>alert("Successfully updated");document.location="../dash.php"</script>';
+      echo '<script>alert("Successfully updated")';
    }
    catch (PDOException $e) {
     echo $e->getMessage();
