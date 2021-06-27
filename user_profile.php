@@ -53,11 +53,11 @@ else
         
     </head>
     <body>
-        <div class="container col-12">
-            <div class="row ">
-                <div class="col-3">
+        <div class="container col-12 pt-4">
+            <div class="row pt-2 pl-2">
+                <div class="col-md-3 col-12">
                     <div id='img' class="row">
-                        <img class="col-8" src="images/avatar_1.png" width="100px" style="display:block">
+                        <img class="col-md-8 col-5 mb-4" src="images/avatar_1.png" width="100px" style="display:block">
                     </div>
                     <div id="info">
                         <div class="row">
@@ -108,7 +108,7 @@ else
                         </div>
                     </div>
                 </div>
-                <div class="col-7">
+                <div class="col-md-7 col-10 ml-md-2">
                         <!-- toggle tab view starts -->
                         
                                     <!-- Nav tabs -->
@@ -137,7 +137,7 @@ if($result)
 ?>
     
     
-    <table class='table'>
+    <table class='table table-hover'>
 <thead class='thead-dark'>
 <tr>
   <th scope='col'>#</th>
@@ -208,7 +208,7 @@ if($result)
 {
 ?>
 
-    <table class='table'>
+    <table class='table table-hover'>
 <thead class='thead-dark'>
 <tr>
   <th scope='col'>#</th>

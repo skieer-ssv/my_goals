@@ -4,8 +4,6 @@ require 'include/dbConfig.inc.php';
 
 if(isset($_POST['search-name']))
 {
-    // $username = mysqli_real_escape_string($con,$_POST['username']);
-    // $email_id = mysqli_real_escape_string($con,$_POST['email_id']);
     $searchName = mysqli_real_escape_string($con,$_POST['search-name']);
     
   
@@ -19,9 +17,13 @@ if(isset($_POST['search-name']))
 
     if($result)
     {
-        echo "
+
+    ?>
+        
+       <div class="col-10 offset-1">
        
-        <table class='table'>
+       
+        <table class='table table-hover'>
   <thead class='thead-dark'>
     <tr>
       <th scope='col'>#</th>
@@ -30,10 +32,10 @@ if(isset($_POST['search-name']))
       <th scope='col'>Details</th>
     </tr>
   </thead>
-        ";
+        
         
 
-
+<?php
     echo "
     
     <tbody>
@@ -53,18 +55,96 @@ if(isset($_POST['search-name']))
     </tr>
     </tbody>
     </table>
+
+    
+    </div>
     
     ";
     
-
-    
+     
     }
     else
     {
         echo "No match found";
     }
-  
+    $_POST['search-name']=NULL;
+    
 }
+elseif(isset($_POST['search-btn']))
+{
+    // $searchName = mysqli_real_escape_string($con,$_POST['search-name']);
+    
+    $username = mysqli_real_escape_string($con,$_POST['username']);
+    $email_id = mysqli_real_escape_string($con,$_POST['email_id']);
+    
+  
+    $sql =  "SELECT * FROM user_info u join credentials c ON u.uid=c.id WHERE `email`='".$email_id."' or `username` ='".$username."'";                                    
+                  
+    $result = mysqli_query($con,$sql);
+    
+    $row= mysqli_fetch_array($result);
+
+    $id = $row["uid"];
+
+    if($result)
+    {
+
+    ?>
+        
+       <div class="col-10 offset-1">
+       
+       
+        <table class='table table-hover'>
+  <thead class='thead-dark'>
+    <tr>
+      <th scope='col'>#</th>
+      <th scope='col'>username</th>
+      <th scope='col'>Email</th>
+      <th scope='col'>Details</th>
+    </tr>
+  </thead>
+        
+        
+
+<?php
+    echo "
+    
+    <tbody>
+    <tr>
+      <th scope='row'>1</th>";
+
+    echo "<td>".$row['name']."</td>";
+    
+    echo "<td>".$row['linkedin']."</td>";
+    
+    echo "<td><a href='./user_profile.php?uid=";
+    
+    echo $id." '><button type='button' class='btn btn-outline-dark'>View</button></a></td>";
+
+    echo "
+    
+    </tr>
+    </tbody>
+    </table>
+
+    
+    </div>
+    
+    ";
+    
+     
+    }
+    else
+    {
+        echo "No match found";
+    }
+    
+}
+else
+{
+
+}
+
 
 ?>
 
@@ -88,21 +168,26 @@ if(isset($_POST['search-name']))
             <div class="row">
                 
                 <div class="col-10 offset-1 offset-md-4 col-md-3 md-form mt-4">
-                    <input class="form-control" name="username" type="text" placeholder="Search by student id" aria-label="Search" required>
+                    <input class="form-control" name="username" type="text" placeholder="Search by student id" aria-label="Search">
+                </div>
+                
+            </div>
+            <div class="row ">
+                <div class="col-10 offset-1 offset-md-4 col-md-3 md-form mt-4 ">
+                    <h5>OR</h5>
+                </div>
+            </div>
+            <div class="row">
+                
+                <div class="col-10 offset-1 offset-md-4 col-md-3 md-form mt-2">
+                    <input class="form-control" type="email" name="email_id" placeholder="Search by email id" aria-label="Search">
                 </div>
                 
             </div>
             <div class="row">
                 
-                <div class="col-10 offset-1 offset-md-4 col-md-3 md-form mt-4">
-                    <input class="form-control" type="email" name="email_id" placeholder="Search by email id" aria-label="Search" required>
-                </div>
-                
-            </div>
-            <div class="row">
-                
-                <div class="col-12 offset-4 offset-md-0 col-md">
-                    <input class="btn btn-outline-success mt-4" name="search-btn" type="submit" value="Search">
+                <div class="col-12 offset-4 ">
+                    <input class="btn btn-outline-dark mt-4" name="search-btn" type="submit" value="Search">
                 </div>
                 
             </div>
