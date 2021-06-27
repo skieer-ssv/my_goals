@@ -1,0 +1,247 @@
+.locimg{
+	position: relative;
+	left: 40%;
+}
+
+.search-box {
+	width: 500px;
+    position: absolute;
+    top: 55%;
+    left: 30%;
+    transform: translate(-50%,-50%);
+    height: 20%;
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 50px;
+    
+	
+}
+
+.search-box:focus-within {
+  	
+    position: absolute;
+    top: 50%;
+    left: 50%;
+	display: flex;
+    justify-content: center; 
+		
+}
+
+
+
+.search-input{
+	
+	width: 100%;
+	
+	font-family: 'Josefin Sans', sans-serif;
+	padding: 8px 0;
+	margin-bottom: 25px;
+	
+}
+
+
+.search-input input{
+	border: none;
+	outline: none;
+	font-size: 20px;
+	font-family: 'Josefin Sans', sans-serif;
+	width: 100%;
+	background: none;
+	border-bottom: 1px solid #b1acac;
+}
+
+.search-input input:hover{
+	border-bottom: 1px solid black;
+	
+}
+
+.search-btn{
+	
+	width: 20%;
+	background: none;
+	border: 1px solid #000;
+	margin-top: 10px;
+	margin-bottom: 25px;
+	color: #21a3ff;
+	font-size: 16px;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.search-btn:hover{
+	background: black;
+	border: 2px solid #000;
+	color: #fff;
+}
+
+.login-box {
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 70%;
+    transform: translate(-50%,-50%);
+    height: 500px;
+    font-family: 'Josefin Sans', sans-serif;
+    border-left: 1px solid #000;
+    padding-left: 100px;
+    margin-right: 0px;
+}
+
+.signup-box {
+    width: 400px;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    height: 500px;
+    font-family: 'Josefin Sans', sans-serif;
+    
+    padding-left: 100px;
+    margin-right: 0px;
+}
+
+h1{
+	margin-bottom: 20px;
+	border-bottom: 5px solid #000;
+	text-align: center;
+	color: #000;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 50px;
+	padding: 15px;
+}
+
+.texttbox{
+	border-bottom: 1px solid #b1acac;
+	width: 100%;
+	font-size: 55px;
+	font-family: 'Josefin Sans', sans-serif;
+	padding: 8px 0;
+	margin-bottom: 25px;
+	
+}
+
+.texttbox2{
+	border-bottom: 1px solid #b1acac;
+	width: 100%;
+	font-size: 55px;
+	font-family: 'Josefin Sans', sans-serif;
+	padding: 2px 0;
+	margin-bottom: 1px;
+	
+}
+.texttbox:hover {
+    border-bottom: 1px solid black;
+    width: 100%;
+   
+}
+.texttbox2:hover {
+    border-bottom: 1px solid black;
+    width: 100%;
+   
+}
+.texttbox input{
+	border: none;
+	outline: none;
+	font-family: 'Josefin Sans', sans-serif;
+	width: 100%;
+	background: none;
+}
+.texttbox2 input{
+	border: none;
+	outline: none;
+	font-family: 'Josefin Sans', sans-serif;
+	width: 100%;
+	background: none;
+}
+
+
+.bttn{
+	width: 100%;
+	background: none;
+	border: 2px solid #000;
+	margin-top: 10px;
+	margin-bottom: 25px;
+	color: #21a3ff;
+	font-size: 16px;
+	padding: 10px;
+	cursor: pointer;
+}
+
+.bttn:hover {
+	background: black;
+	border: 2px solid #000;
+	color: #fff;
+}
+
+.forgot{
+	color: #21a3ff;
+	font-family: 'Josefin Sans', sans-serif;
+	font-size: 16px;
+	
+}
+
+.forgot:hover {
+	font-size: 18px;
+	color: red;
+	transition: 0.25s;
+}
+
+
+.con{
+	font-family: 'Josefin Sans', sans-serif;
+	position: absolute;
+    
+    right: 0%;
+    color: #21a3ff;
+    font-size: 16px;
+}
+
+.con:hover{
+	font-size: 18px;
+	transition: 0.25s;
+	color: green;
+}
+
+.alert{
+	text-align: center;
+	width: 100%;
+	font-weight: bold;
+	font-size: 18px;
+	background: white;
+	color: red;
+	position: relative;
+	top: 15%;
+	
+}
+
+
+.inputfile-box {
+  position: relative;
+}
+
+.inputfile {
+  display: none;
+}
+
+.container {
+  display: inline-block;
+  width: 100%;
+}
+
+.file-box {
+  display: inline-block;
+  width: 100%;
+  border: 1px solid;
+  padding: 5px 0px 5px 5px;
+  box-sizing: border-box;
+  height: calc(2rem - 2px);
+}
+
+.file-button {
+  background: black;
+	color: white;
+  padding: 5px;
+  position: absolute;
+  border: 1px solid;
+  top: 0px;
+  right: 0px;
+}
