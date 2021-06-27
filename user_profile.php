@@ -62,7 +62,7 @@ else
    </button>
    <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <div class="navbar-nav mr-auto">
-		  <h2>Goals Site</h2>
+		  <h2>DevHub</h2>
          </div>
       <form class="form-inline my-2 my-lg-0">
          
