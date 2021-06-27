@@ -3,7 +3,7 @@ session_start();
 
 if (!isset($_SESSION['uid'])) {
 
-  echo '<script>alert("You are not logged in");document.location="admin-login.php"</script>';
+  echo '<script>alert("You are not logged in");document.location="index.php"</script>';
 } else {
     require_once 'include/dbConfig.inc.php';
     

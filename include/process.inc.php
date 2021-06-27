@@ -1,7 +1,6 @@
 <?php 
 require_once('dbConfig.inc.php');
 
-session_start();
     if(isset($_POST['Login']))
     {
        if(empty($_POST['UName']) || empty($_POST['Password']))
@@ -12,19 +11,21 @@ session_start();
        else
        {
         $username=strip_tags($_POST['UName']);
-        $pass=strip_tags($_POST['Pasword']);
+        $pass=strip_tags($_POST['Password']);
             $query="select * from credentials where username='".$username."' and password='".$pass."'";
             $result=mysqli_query($con,$query);
 
-            if(mysqli_fetch_assoc($result))
+            if(mysqli_num_rows($result)>0)
             {
-            	session_start();
             	
+            	session_start();
             	$record=mysqli_fetch_array($result);
+                
                 $_SESSION['user']=$record['username'];
-                $_SESSION['uid']=$record['uid'];
+                $_SESSION['uid']=$record['id'];
                 
                 header("location:../dash.php");
+                exit();
             }
             else
             {
