@@ -5,28 +5,28 @@
 	<title>Login Page</title>
 	<link rel="preconnect" href="https://fonts.gstatic.com">
 	<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="style.css">
+	<link rel="stylesheet" href="css/login-style.css">
    
 	
 </head>
 <body>
 					
-	<img src="DM.png" alt="Logo" style="width:200px;height:50px;"> <hr>
+	<img src="images/DM.png" alt="Logo" style="width:200px;height:50px;"> <hr>
 	
 	<div class="search-box" id="btn2" >  
 		<form action="search.php" method="post">
 			<div class="search-input"  >
 		<h2>Search that developer in your class</h2><br>
-			<input  type="text" name="fname" id="btn1">
+			<input  type="text" name="search-name" id="btn1">
        		<button class="search-btn">Search</button></div>
 		
 		</form>
 		
 	</div>
 	
-<form action="process.php" method="post">
+<form action="include/process.inc.php" method="post">
 	<div class="login-box" id="green">
-		<img class="locimg" src="loc.png" alt="Lock" style="width:70px;height:75px;">
+		<img class="locimg" src="images/loc.png" alt="Lock" style="width:70px;height:75px;">
 		<h1> Login </h1>
 		<div class="texttbox">
     
@@ -66,7 +66,7 @@
 	
 	
 	
-	<form action="register.php" method="post" enctype="multipart/form-data">
+	<form action="include/register.inc.php" method="post" enctype="multipart/form-data">
 	<div class="signup-box" id="ee">
 		
 		<h1> New Account </h1>

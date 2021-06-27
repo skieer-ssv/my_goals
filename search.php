@@ -2,25 +2,25 @@
 
 require 'include/dbConfig.inc.php';
 
-if(isset($_POST['search-btn']))
+if(isset($_POST['search-name']))
 {
-    $username = mysqli_real_escape_string($con,$_POST['username']);
-    $email_id = mysqli_real_escape_string($con,$_POST['email_id']);
-  
+    // $username = mysqli_real_escape_string($con,$_POST['username']);
+    // $email_id = mysqli_real_escape_string($con,$_POST['email_id']);
+    $searchName = mysqli_real_escape_string($con,$_POST['search-name']);
     
   
-    $sql =  "SELECT `username`,`email`, `id`  FROM credentials WHERE `username`='".$username."'and `email`='".$email_id."'limit 1";                                    
+    $sql =  "SELECT * FROM user_info u join credentials c ON u.uid=c.id WHERE `name`='".$searchName."' or `username` ='".$searchName."'";                                    
                   
     $result = mysqli_query($con,$sql);
     
-    $row= mysqli_fetch_assoc($result);
+    $row= mysqli_fetch_array($result);
 
-    $id = $row["id"];
+    $id = $row["uid"];
 
     if($result)
     {
         echo "
-        
+       
         <table class='table'>
   <thead class='thead-dark'>
     <tr>
@@ -31,6 +31,7 @@ if(isset($_POST['search-btn']))
     </tr>
   </thead>
         ";
+        
 
 
     echo "
@@ -39,13 +40,13 @@ if(isset($_POST['search-btn']))
     <tr>
       <th scope='row'>1</th>";
 
-    echo "<td>".$username."</td>";
+    echo "<td>".$row['name']."</td>";
     
-    echo "<td>".$email_id."</td>";
+    echo "<td>".$row['linkedin']."</td>";
     
     echo "<td><a href='./user_profile.php?uid=";
     
-    echo $id." '><button type='button' class='btn btn-dark'>Dark</button></a></td>";
+    echo $id." '><button type='button' class='btn btn-outline-dark'>View</button></a></td>";
 
     echo "
     
@@ -77,6 +78,7 @@ if(isset($_POST['search-btn']))
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300&display=swap" rel="stylesheet">
+        
 	
     </head>
     <body>

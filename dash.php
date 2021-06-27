@@ -72,7 +72,7 @@ if (!isset($_SESSION['uid'])) {
                   </div>
                   <div class="row" style="display:flex; justify-content:space-evenly">
                   <form action="../include/edit-goal.inc.php" method="POST"><button class="btn btn-success" name="done" value="' . $record["gid"] . '">Done</button></form>
-                  <form action="../include/edit-news.inc.php" method="POST"><button class=" btn btn-danger" name="give_up" value="' . $record["gid"] . '">Give up</button></form>
+                  <form action="../include/edit-news.inc.php" method="POST"><button class=" btn" name="give_up" value="' . $record["gid"] . '">Give up</button></form>
               </div></div>';
       }
     }
