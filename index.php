@@ -10,7 +10,9 @@
 	
 </head>
 <body>
-					
+					<?php 
+					require_once 'nav.php'; 
+					?>
 	<img src="images/DM.png" alt="Logo" style="width:200px;height:50px;"> <hr>
 	
 	<div class="search-box" id="btn2" >  
